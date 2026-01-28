@@ -107,7 +107,7 @@ DROP TABLE IF EXISTS agents;
 
 CREATE TABLE studios (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT,
+  name TEXT
 );
 
 CREATE TABLE agents (
@@ -143,7 +143,7 @@ CREATE TABLE characters (
 -- TODO!
 -- Studios
 INSERT INTO studios (
-  name
+    name
 )
 VALUES (
   "Warner Bros."
@@ -533,7 +533,9 @@ UPDATE actors
 
 -- ***TODO!***
 -- The SQL statement for the movies output goes here.
-
+SELECT movies.title, movies.year_released, movies.mpaa_rating, studios.name
+FROM studios INNER JOIN movies ON movies.studio_id = studios.id
+;
 -- Example output:
 -- Movies
 -- ======
