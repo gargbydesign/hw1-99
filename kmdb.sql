@@ -551,7 +551,8 @@ FROM studios INNER JOIN movies ON movies.studio_id = studios.id
 
 -- ***TODO!***
 -- The SQL statement for the cast output goes here.
-SELECT 
+SELECT movies.title, actors.first_name, actors.last_name, characters.first_name, characters.last_name
+FROM characters INNER JOIN actors ON characters.actor_id = actors.id INNER JOIN movies ON characters.movie_id = movies.id;
 -- Example output:
 -- Top Cast
 -- ========
