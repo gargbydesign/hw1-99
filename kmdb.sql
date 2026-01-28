@@ -580,7 +580,9 @@ FROM characters INNER JOIN actors ON characters.actor_id = actors.id INNER JOIN 
 
 -- ***TODO!***
 -- The SQL statement for the represented actor(s) output goes here.
-
+SELECT actors.first_name, actors.last_name
+FROM actors INNER JOIN agents ON agents.id = actors.agent_id
+;
 -- Example output:
 -- Represented by agent
 -- ====================
